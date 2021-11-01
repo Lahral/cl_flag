@@ -3,19 +3,19 @@
 #include <iostream>
 
 void parser::i_flag(int* source, char* flag, int default_value, std::string help_value){
-    command_struct *command = new command_struct(source, &default_value, flag, help_value, command_type::integer);
+    command_struct command =  command_struct(source, &default_value, flag, help_value, command_type::integer);
     command_list.emplace_back(command);
     return;
 }
 
 void parser::b_flag(bool* source, char* flag, bool default_value, std::string help_value){
-    command_struct *command = new command_struct(source, &default_value, flag, help_value, command_type::boolean);
+    command_struct command = command_struct(source, &default_value, flag, help_value, command_type::boolean);
     command_list.emplace_back(command);
     return;
 }
 
 void parser::c_flag(std::string* source, char* flag, std::string default_value, std::string help_value){
-    command_struct *command = new command_struct(source, &default_value, flag, help_value, command_type::string);
+    command_struct command = command_struct(source, &default_value, flag, help_value, command_type::string);
     command_list.emplace_back(command);
     return;
 }

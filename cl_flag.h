@@ -18,6 +18,27 @@ class parser{
         char* flag;
         std::string help_value;
         command_type type;
+      command_struct(int* src, int* val, char* flag, std::string help, command_type type)
+	: destination{src}
+	, value{val}
+	, flag{flag}
+	, help_value{help}
+	, type(type)
+      {};
+      command_struct(bool* src, bool* val, char* flag, std::string help, command_type type)
+	: destination{src}
+	, value{val}
+	, flag{flag}
+	, help_value{help}
+	, type(type)
+      {};
+      command_struct(std::string* src, std::string* val, char* flag, std::string help, command_type type)
+	: destination{src}
+	, value{val}
+	, flag{flag}
+	, help_value{help}
+	, type(type)
+      {};
     };
 
     std::vector<command_struct> command_list;
